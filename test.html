@@ -1,10 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>The Website</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+
+    <header>
+        <h1>Header</h1>
+    </header>
+    
+<main>
+    <div id="container"></div>
+   <div class="addKeyContainer">
+    <button class="addkeybutton" id="addKeyButton">Add Key</button>
+   </div>
+   <!-- Modal for adding keys -->
+    <div id="addKeyModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Additional Key information</h2>
+            <input type="text" id="keyName" placeholder="Key Name">
+            <input type="text" id="KeyHolder" placeholder="Enter Key Holder"> 
+            <div id="available-container">
+                <input type="checkbox" id="available" name="available">
+                <label for="available">Available</label>
+            </div>
+            <button id="submitKey">Submit</button>
+            <p id="keyNameError" style="color: red; display: none;">Please enter a key name.</p>
+            <p id="KeyHolderError" style="color: red; display: none;">Please enter a current key holder if not available.</p>
+        </div>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2024 Our Website. All rights reserved.</p>
+</footer>
+<script>
+    var keyCount = 1; // Start with 1
+
+function explore() {
+    alert("You clicked the Key button!");
+}
+
+function addKey() {
+    var container = document.getElementById("container");
+    var div = document.createElement("div");
+    div.className = "content";
+
+    // Create "Key" button
+    var keyButton = document.createElement("button");
+    keyButton.className = "exploreButton";
+    keyButton.innerHTML = 'Key ' + (keyCount); // Use keyCount as the key name
+    keyButton.onclick = explore; // Assign the explore function to the click event
+    div.appendChild(keyButton);
+
+    // Add text below the button
+    var keyText = document.createElement("span");
+    keyText.className = "keyText";
+    keyText.innerHTML = "Key Holder";
+    div.appendChild(keyText);
+
+    // Add availability text below the button
+    var availabilityText = document.createElement("span");
+    availabilityText.className = "availabilityText";
+    availabilityText.innerHTML = "";
+    div.appendChild(availabilityText);
+
+    container.appendChild(div);
+
+    // Clear input fields
+    document.getElementById("keyName").value = "";
+    document.getElementById("KeyHolder").value = "";
+    document.getElementById("available").checked = false;
+
+    // Increment keyCount
+    keyCount++;
+}
+
+document.getElementById("addKeyButton").onclick = function() {
+    var modal = document.getElementById("addKeyModal");
+    modal.style.display = "block";
+}
+
+document.getElementsByClassName("close")[0].onclick = function() {
+    var modal = document.getElementById("addKeyModal");
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    var modal = document.getElementById("addKeyModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+document.getElementById("available").onchange = function() {
+    var KeyHolder = document.getElementById("KeyHolder");
+    KeyHolder.disabled = this.checked; // Disable key description input if "Available" is checked
+    if (this.checked) {
+        KeyHolder.value = ""; // Clear key description input if "Available" is checked
+    } else {
+        KeyHolder.disabled = false; // Enable key description input if "Available" is unchecked
+    }
+}
+
+document.getElementById("submitKey").onclick = function() {
+    var keyName = document.getElementById("keyName").value.trim();
+    var KeyHolder = document.getElementById("KeyHolder").value.trim();
+    var available = document.getElementById("available").checked;
+    
+    // Validation
+    if (!keyName) {
+        document.getElementById("keyNameError").style.display = "block";
+        return;
+    } else {
+        document.getElementById("keyNameError").style.display = "none";
+    }
+    
+    if (!available && !KeyHolder) {
+        document.getElementById("KeyHolderError").style.display = "block";
+        return;
+    } else {
+        document.getElementById("KeyHolderError").style.display = "none";
+    }
+
+    // Container
+    var container = document.getElementById("container");
+    var div = document.createElement("div");
+    div.className = "content";
+    div.classList.add(available ? "available" : "not-available"); // For styling based on availability
+
+    // Key Name
+    var keyText = document.createElement("div");
+    keyText.className = "key-text";
+    keyText.innerHTML = `<span>${keyName}</span>`;
+    div.appendChild(keyText);
+
+    // Availability
+    var availabilityText = document.createElement("div");
+    availabilityText.className = "availability-text";
+    var availabilityIndicator = document.createElement("span");
+    availabilityIndicator.className = "availability-indicator";
+    availabilityText.appendChild(availabilityIndicator);
+    availabilityText.innerHTML += available ? "Available" : "Not Available";
+    div.appendChild(availabilityText);
+
+    container.appendChild(div);
+
+    // Close Modal & Reset Form
+    document.getElementById("addKeyModal").style.display = "none";
+    document.getElementById("keyName").value = "";
+    document.getElementById("KeyHolder").value = "";
+    document.getElementById("available").checked = false;
+};
+
+</script>
 
 </body>
 </html>
