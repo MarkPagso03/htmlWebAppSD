@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<header>
+    <button id="nav-button">☰</button> <!-- Nav button to open sidebar -->
+</header>
+<div id="mySidenav" class="sidenav">
+    <div class="nav-header">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <span class="nav-title">Menu</span>
+    </div>
+    <button class="nav-button">Home</button>
+    <button class="nav-button" onclick="showAddKeyModal()">Add Key</button> <!-- Added onclick for modal -->
+    <button class="nav-button">Favorites</button>
+</div>
+<main>
+    <div id="keyContainer" class="key-container"></div> <!-- Container for displaying keys -->
+
+    <div id="addKeyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Additional Key information</h2>
+            <input type="text" id="keyName" placeholder="Key Name">
+            <input type="text" id="KeyHolder" placeholder="Enter Key Holder">
+            <div id="available-container">
+                <input type="checkbox" id="available" name="available">
+                <label for="available">Available</label>
+            </div>
+            <button id="submitKey">Submit</button>
+            <p id="keyNameError" style="color: red; display: none;">Please enter a key name.</p>
+            <p id="KeyHolderError" style="color: red; display: none;">Please enter a current key holder if not available.</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 Our Website. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>
