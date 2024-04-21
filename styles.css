@@ -1,0 +1,234 @@
+/* General styles for the body */
+body {
+    font-family: Arial, sans-serif; /* Set font family for text */
+    background-color: #f0f0f0; /* Set background color */
+    color: #333; /* Set text color */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items vertically */
+    min-height: 100vh; /* Set minimum height to 100% of viewport height */
+    position: relative; /* Set relative positioning */
+}
+/* Header styling */
+header {
+    background-color: #333; /* Set background color */
+    color: white; /* Set text color */
+    padding: 10px 20px; /* Add padding */
+    text-align: left; /* Align text to left */
+}
+
+/* Footer styling */
+footer {
+    background-color: #4169e1; /* Set background color */
+    color: #fff; /* Set text color */
+    text-align: center; /* Center align text */
+    padding: 4px; /* Add padding */
+    margin-top: auto; /* Push footer to bottom */
+}
+
+/* Navigation title styling */
+.nav-title {
+    padding: 10px 20px; /* Add padding */
+    color: #fff; /* Set text color */
+    background-color: #333; /* Set background color */
+    text-align: center; /* Center align text */
+    font-size: 20px; /* Set font size */
+    border-bottom: 1px solid #fff; /* Add border */
+}
+
+/* Overlay style (commonly used for modals) */
+.overlay {
+    display: none; /* Hide by default */
+    position: fixed; /* Fixed position */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    top: 0; /* Position from top */
+    left: 0; /* Position from left */
+    right: 0; /* Position from right */
+    bottom: 0; /* Position from bottom */
+    background-color: rgba(0,0,0,0.5); /* Semi-transparent black background */
+    z-index: 2; /* Set stacking order */
+}
+
+/* Side navigation (sidebar menu) styles */
+.sidenav {
+    height: 100%; /* Full height */
+    width: 0; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    z-index: 3; /* Set stacking order */
+    top: 0; /* Position from top */
+    left: 0; /* Position from left */
+    background-color: #111; /* Set background color */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    transition: 0.5s; /* Add transition effect */
+    padding-top: 60px; /* Add padding */
+}
+
+/* Styling for links inside the sidenav */
+.sidenav a {
+    padding: 10px 15px; /* Add padding */
+    text-decoration: none; /* Remove underline */
+    font-size: 25px; /* Set font size */
+    color: #818181; /* Set text color */
+    display: block; /* Display as block */
+    transition: 0.3s; /* Add transition effect */
+}
+
+/* Hover effect for links */
+.sidenav a:hover {
+    color: #f1f1f1; /* Change text color on hover */
+}
+
+/* Navigation header styles */
+.nav-header {
+    display: flex; /* Use flexbox */
+    align-items: center; /* Align items vertically */
+    padding: 0 20px; /* Add padding */
+}
+
+/* Close button in the sidenav */
+.closebtn {
+    font-size: 36px; /* Set font size */
+    cursor: pointer; /* Add cursor pointer */
+    background: none; /* No background */
+    border: none; /* No border */
+    color: #fff; /* Set text color */
+    padding: 10px 15px; /* Add padding */
+}
+
+/* Styles for buttons in the navigation */
+.nav-button {
+    padding: 10px 20px; /* Add padding */
+    width: 100%; /* Full width */
+    border: none; /* No border */
+    background-color: #111; /* Set background color */
+    color: #818181; /* Set text color */
+    text-align: left; /* Align text to left */
+    font-size: 16px; /* Set font size */
+    border-bottom: 1px solid #333; /* Add border */
+    outline: none; /* Remove outline */
+    cursor: pointer; /* Add cursor pointer */
+}
+
+/* Hover and focus styles for navigation buttons */
+.nav-button:hover, .nav-button:focus {
+    background-color: #333; /* Darker background on hover/focus */
+    color: #fff; /* White text color on hover/focus */
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hide by default */
+    position: fixed; /* Fixed position */
+    z-index: 1; /* Set stacking order */
+    background-color: #f0f0f0; /* Set background color */
+    left: 0; /* Position from left */
+    top: 0; /* Position from top */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Allow overflow */
+    background-color: rgba(0,0,0,0.4); /* Semi-transparent black background */
+}
+
+/* Adjust input positioning */
+.modal-content {
+    background-color: #fefefe; /* Set background color */
+    margin: 5% auto; /* Add margin */
+    padding: 20px; /* Add padding */
+    border-radius: 5px; /* Add border radius */
+    width: 30%; /* Set width */
+    height: 40%; /* Set height */
+}
+
+/* Styles for text input */
+input[type="text"], #KeyHolder {
+    width: 80%; /* Set width */
+    padding: 10px; /* Add padding */
+    margin-bottom: 10px; /* Add margin */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 4px; /* Add border radius */
+    position: relative; /* Set relative position */
+}
+
+/* Styles for key container */
+.key-container {
+    padding: 20px; /* Add padding */
+    margin: 20px; /* Add margin */
+    border: 1px solid #ccc; /* Add border */
+}
+
+/* Styles for key item */
+.key-item {
+    margin: 10px 0; /* Add margin */
+    padding: 10px; /* Add padding */
+    background-color: #f9f9f9; /* Set background color */
+    border-left: 5px solid #4CAF50; /* Set border color */
+}
+
+/* Styles for not available key item */
+.key-item.not-available {
+    border-left-color: #f44336; /* Set border color */
+}
+
+/* Styles for available container */
+#available-container {
+    display: flex; /* Use flexbox */
+    align-items: center; /* Align items vertically */
+}
+
+/* Styles for available checkbox */
+#available:checked + label {
+    color: rgb(3, 253, 3); /* Change text color */
+}
+
+/* Styles for available checkbox before */
+#available:checked + label::before {
+    background-color: rgb(0, 255, 0); /* Change background color */
+}
+
+/* Adjust submit button positioning */
+#submitKey {
+    color: #ffffff; /* Set text color */
+    background-color: #2960f8; /* Set background color */
+    width: 110px; /* Set width */
+    height: 35px; /* Set height */
+    margin: 20px auto 0; /* Add margin */
+    display: block; /* Display as block */
+    border-radius: 0%; /* Set border radius */
+}
+
+/* Close button styles */
+.close {
+    color: #aaa; /* Set text color */
+    float: right; /* Float to right */
+    font-size: 28px; /* Set font size */
+    font-weight: bold; /* Set font weight */
+}
+
+/* Hover and focus styles for close button */
+.close:hover, .close:focus {
+    color: black; /* Change text color on hover/focus */
+    text-decoration: none; /* Remove underline on hover/focus */
+    cursor: pointer; /* Add cursor pointer */
+}
+
+/* Additional CSS for available and not available circles */
+.key-availability::before {
+    content: ''; /* Add content */
+    display: inline-block; /* Display as inline block */
+    width: 15px; /* Set width */
+    height: 15px; /* Set height */
+    border-radius: 50%; /* Set border radius */
+    margin-right: 5px; /* Add margin */
+}
+
+/* Styles for available circle */
+.available .key-availability::before {
+    background-color: green; /* Set background color */
+}
+
+/* Styles for not available circle */
+.not-available .key-availability::before {
+    background-color: red; /* Set background color */
+}
