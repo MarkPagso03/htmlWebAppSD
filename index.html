@@ -3,6 +3,7 @@
 <head>
     <title>My Website</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -19,12 +20,14 @@
     <button class="nav-button">Favorites</button>
 </div>
 <main>
-    <div id="keyContainer" class="key-container"></div> <!-- Container for displaying keys -->
-
+    <div id ="Containers"class="keys">
+         <div id="availableKeysContainer" class="key-container"></div> <!-- Container for available keys -->
+        <div id="notAvailableKeysContainer" class="key-container"></div> <!-- Container for not available keys -->
+    </div>
     <div id="addKeyModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Additional Key information</h2>
+            <h2>Add Key</h2>
             <input type="text" id="keyName" placeholder="Key Name">
             <input type="text" id="KeyHolder" placeholder="Enter Key Holder">
             <div id="available-container">
