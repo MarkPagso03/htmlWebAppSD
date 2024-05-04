@@ -20,6 +20,7 @@ function showAddKeyModal() {
 function closeModal() {
     document.getElementById("addKeyModal").style.display = "none";
 }
+
 document.getElementById("KeyHolder").oninput = function() {
     // If there's any input in Key Holder, disable the Available checkbox
     var keyHolderValue = this.value.trim();
@@ -45,7 +46,7 @@ document.getElementById("available").onchange = function() {
 
 document.getElementById("submitKey").onclick = function() {
     var keyName = document.getElementById("keyName").value.trim();
-    var KeyHolder = document.getElementById("KeyHolder").value.trim();
+    var KeyHolder = document.getElementById("KeyHolder").value.trim() || "Keypie"; // Use "Keypie" if KeyHolder is empty
     var available = document.getElementById("available").checked;
 
     // Validation checks
@@ -63,7 +64,10 @@ document.getElementById("submitKey").onclick = function() {
         document.getElementById("KeyHolderError").style.display = "none";
     }
 
-    var container = document.getElementById("keyContainer");
+    // Determine which container to append the key to
+    var containerId = available ? "availableKeysContainer" : "notAvailableKeysContainer";
+    var container = document.getElementById(containerId);
+
     var div = document.createElement("div");
     div.className = "key-item";
     if (!available) {
