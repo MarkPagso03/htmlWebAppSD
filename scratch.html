@@ -24,14 +24,15 @@
           100% { transform: rotate(360deg); }
         }
 </style>
+
 </head>
 <body>
 <!-- gray block -->
-<div style="display: none; height: 100vh; width: 100vw; background: #c2c2c2; opacity: .4; position: fixed; z-index: 1;"></div>
+<div id="gray_block" style="display: none; height: 100vh; width: 100vw; background: #c2c2c2; opacity: .4; position: fixed; z-index: 1;"></div>
 
 <!-- pop up profile-->
-<div style="display: none; align-items: center; height: 600px; width: 400px; background: #d9d9d9; position: fixed; z-index: 2; border-radius: 20px; left: calc(50vw - 200px); top: calc(50vh - 265px);" >
-    <span class="material-symbols-outlined" style="display: block; position: relative; color: #3e3e3e; font-size: 30px; left: 360px; top: 15px; width: 20px; cursor: pointer;" onmouseover="this.style.color='#6f6f6f'" onmouseout="this.style.color='#3e3e3e'">cancel</span>
+<div id="profile_block" style="display: none; align-items: center; height: 600px; width: 400px; background: #d9d9d9; position: fixed; z-index: 2; border-radius: 20px; left: calc(50vw - 200px); top: calc(50vh - 265px);" >
+    <span id="cancel_profile" class="material-symbols-outlined" style="display: block; position: relative; color: #3e3e3e; font-size: 30px; left: 360px; top: 15px; width: 20px; cursor: pointer;" onmouseover="this.style.color='#6f6f6f'" onmouseout="this.style.color='#3e3e3e'">cancel</span>
     <span class="material-symbols-outlined" style="position: relative; left: 100px; color: #3e3e3e; font-size: 200px; ">account_circle</span>
     <span class="material-symbols-outlined" style="display: block; position: relative; color: #3e3e3e; font-size: 30px; left: 300px; top: -30px; cursor: pointer;" onmouseover="this.style.color='#6f6f6f'" onmouseout="this.style.color='#3e3e3e'">edit</span>
     <h3 style="font-family: Poppins-SemiBold; color: #4f4f4f; width: 200px; text-align: left; padding: 50px; line-height: 60px;">
@@ -43,25 +44,25 @@
 </div>
 
 <!-- pop up borrowing key -->
-<div style="display: none; align-items: center; height: 600px; width: 400px; background: #d9d9d9; position: fixed; z-index: 2; border-radius: 20px; left: calc(50vw - 200px); top: calc(50vh - 265px);" >
-    <span class="material-symbols-outlined" style="display: block; position: relative; color: #3e3e3e; font-size: 30px; left: 360px; top: 15px; cursor: pointer; width: 20px;" onmouseover="this.style.color='#6f6f6f'" onmouseout="this.style.color='#3e3e3e'">cancel</span>
+<div id="borrowing_block" style="display: none; align-items: center; height: 600px; width: 400px; background: #d9d9d9; position: fixed; z-index: 2; border-radius: 20px; left: calc(50vw - 200px); top: calc(50vh - 265px);" >
+    <span id="cancel_borrowing" class="material-symbols-outlined" style="display: block; position: relative; color: #3e3e3e; font-size: 30px; left: 360px; top: 15px; cursor: pointer; width: 20px;" onmouseover="this.style.color='#6f6f6f'" onmouseout="this.style.color='#3e3e3e'">cancel</span>
     <span class="material-symbols-outlined" style="position: absolute; left: 100px; color: #3e3e3e; font-size: 200px; top: 150px; animation: spin 1s ease-in-out infinite;">progress_activity</span>
     <h3 style="position: absolute; left: 75px; top: 400px;">Ready to borrow key...</h3>
 </div>
 
 <!-- pop up sign in/sign up-->
-<div style="display: none; align-items: center; height: 600px; width: 400px; background: #d9d9d9; position: fixed; z-index: 2; border-radius: 20px; left: calc(50vw - 200px); top: calc(50vh - 265px);" >
-    <span class="material-symbols-outlined" style="display: block; position: relative; color: #3e3e3e; font-size: 30px; left: 360px; top: 15px; width: 20px; cursor: pointer;" onmouseover="this.style.color='#6f6f6f'" onmouseout="this.style.color='#3e3e3e'">cancel</span>
+<div id="sign_block" style="display: ; align-items: center; height: 600px; width: 400px; background: #d9d9d9; position: fixed; z-index: 2; border-radius: 20px; left: calc(50vw - 200px); top: calc(50vh - 265px);" >
+    <span id="cancel_sign" class="material-symbols-outlined" style="display: block; position: relative; color: #3e3e3e; font-size: 30px; left: 360px; top: 15px; width: 20px; cursor: pointer;" onmouseover="this.style.color='#6f6f6f'" onmouseout="this.style.color='#3e3e3e'">cancel</span>
     <span class="material-symbols-outlined" style="position: relative; left: 100px; top: 30px; color: #3e3e3e; font-size: 200px; ">account_circle</span>
-    <form style="display: none;position: relative; top: 40px; padding: 40px; width: 300px; margin-bottom: 15px;">
+    <form id="signin_form" style="display: ;position: relative; top: 40px; padding: 40px; width: 300px; margin-bottom: 15px;">
         <label for="email" style="border: 2px solid #000; border-radius: 50px; padding: 7px; width: 300px; display: block; margin-bottom: 8px;">Email:
             <input type="email" id="email" name="email" placeholder="Enter your email" required style="border: none; background: transparent; outline: none; margin-left: 5px;"></label>
         <label for="pin" style="border: 2px solid #000; border-radius: 50px; padding: 7px; width: 300px; display: block;">Pin:
             <input type="password" id="pin" maxlength="4" inputmode="numeric" name="pin" placeholder="Enter your pin" required style="border: none; background: transparent; outline: none; margin-left: 5px;"></label>
-        <input type="submit" value="Sign In" style="border: none; background: #3e3e3e; color: white; padding: 10px; border-radius: 20px; width: 100px; margin: 15px 110px; cursor: pointer;">
+        <input type="submit" value="Sign In" style="border: none; background: #3e3e3e; color: white; padding: 10px; border-radius: 20px; width: 100px; margin: 15px 110px 0px 110px; cursor: pointer;">
     </form>
-        <span style="display: none;"><div style="display: inline-block; width: 40%; height: 1px; background-color: black; margin: 4%; vertical-align: middle;"></div><span style="display: inline-block; width: 4%;">or</span><div style="display: inline-block; width: 40%; height: 1px; background-color: black; margin: 4%; vertical-align: middle;"></div></span>
-    <form style="display: ;position: relative; top: 15px; padding: 40px; width: 300px; margin-bottom: 15px;">
+        <span id="sign_partition" style="display: ;"><div style="display: inline-block; width: 40%; height: 1px; background-color: black; margin: 4%; vertical-align: middle;"></div><span style="display: inline-block; width: 4%;">or</span><div style="display: inline-block; width: 40%; height: 1px; background-color: black; margin: 4%; vertical-align: middle;"></div></span>
+    <form id="signup_form" style="display: none;position: relative; top: 15px; padding: 40px; width: 300px; margin-bottom: 15px;">
         <label for="name" style="border: 2px solid #000; border-radius: 50px; padding: 7px; width: 300px; display: block; margin-bottom: 8px;">Full name:
             <input type="text" id="name" name="name" placeholder="Juan D. Tamad" required style="border: none; background: transparent; outline: none; margin-left: 5px;"></label>
         <label for="email" style="border: 2px solid #000; border-radius: 50px; padding: 7px; width: 300px; display: block; margin-bottom: 8px;">Email:
@@ -74,7 +75,7 @@
             <input type="text" id="course" name="course" placeholder="BSCOE-2B" required style="border: none; background: transparent; outline: none; margin-left: 5px;"></label>
         <input type="submit" value="Sign Up" style="border: none; background: #3e3e3e; color: white; padding: 10px; border-radius: 20px; width: 100px; margin: 15px 110px; cursor: pointer;">
     </form>
-    <button style="display: none; border: none; background: #3e3e3e; color: white; padding: 10px; border-radius: 20px; width: 100px; margin: 15px 150px; cursor: pointer;">Sign Up</button>
+    <button id="signup_button" style="display: ; border: none; background: #3e3e3e; color: white; padding: 10px; border-radius: 20px; width: 100px; margin: 15px 150px; cursor: pointer;">Sign Up</button>
 </div>
 
 
@@ -83,9 +84,9 @@
     <img src="src/PSU-logo.png" style="height: 50px; margin: 15px;">
     <h2 style="display: block; font-family: Poppins-SemiBold; color: white;">Computer Engineering Faculty Keys</h2>
     <span style="width: calc(100vw - 700px);"></span>
-    <span class="material-symbols-outlined" style="color: white; font-size: 40px; margin: 8px; cursor: pointer;" onmouseover="this.style.color='#b4b4b4'" onmouseout="this.style.color='white'">account_circle</span>
-    <span class="material-symbols-outlined" style="color: white; font-size: 40px; margin: 8px; cursor: pointer;" onmouseover="this.style.color='#b4b4b4'" onmouseout="this.style.color='white'">key</span>
-    <span class="material-symbols-outlined" style="color: white; font-size: 40px; margin: 8px; cursor: pointer;" onmouseover="this.style.color='#b4b4b4'" onmouseout="this.style.color='white'">logout</span>
+    <span id="open_profile" class="material-symbols-outlined" style="color: white; font-size: 40px; margin: 8px; cursor: pointer;" onmouseover="this.style.color='#b4b4b4'" onmouseout="this.style.color='white'">account_circle</span>
+    <span id="open_borrowing" class="material-symbols-outlined" style="color: white; font-size: 40px; margin: 8px; cursor: pointer;" onmouseover="this.style.color='#b4b4b4'" onmouseout="this.style.color='white'">key</span>
+    <span id="sign_out" class="material-symbols-outlined" style="color: white; font-size: 40px; margin: 8px; cursor: pointer;" onmouseover="this.style.color='#b4b4b4'" onmouseout="this.style.color='white'">logout</span>
 </div>
 
 <!-- key in formation -->
@@ -133,6 +134,86 @@
 </div>
 </body>
 <script>
+    document.getElementById("open_profile").addEventListener("click", toggle_profile);
+    document.getElementById("cancel_profile").addEventListener("click", toggle_profile);
+
+    function toggle_profile() {
+    var element = document.getElementById("profile_block");
+    var currentDisplay = window.getComputedStyle(element).getPropertyValue("display");
+            console.log("Current display value:", currentDisplay);
+
+    if (currentDisplay === "none") {
+        element.style.display = "block";
+        document.getElementById("gray_block").style.display= "block";
+    } else {
+        element.style.display = "none";
+        document.getElementById("gray_block").style.display = "none";
+    }
+    }
+
+    document.getElementById("open_borrowing").addEventListener("click", toggle_borrowing);
+    document.getElementById("cancel_borrowing").addEventListener("click", toggle_borrowing);
+
+    function toggle_borrowing() {
+    var element = document.getElementById("borrowing_block");
+    var currentDisplay = window.getComputedStyle(element).getPropertyValue("display");
+            console.log("Current display value:", currentDisplay);
+
+    if (currentDisplay === "none") {
+        element.style.display = "block";
+        document.getElementById("gray_block").style.display= "block";
+    } else {
+        element.style.display = "none";
+        document.getElementById("gray_block").style.display = "none";
+    }
+    }
+
+    document.getElementById("cancel_sign").addEventListener("click", function(){
+    var element = document.getElementById("signup_form");
+    var currentDisplay = window.getComputedStyle(element).getPropertyValue("display");
+            console.log("Current display value:", currentDisplay);
+
+        if(currentDisplay === "block"){
+        toggle_signup();
+        }else{
+        toggle_sign();
+        }
+    });
+
+    function toggle_sign() {
+    var element = document.getElementById("sign_block");
+    var currentDisplay = window.getComputedStyle(element).getPropertyValue("display");
+            console.log("Current display value:", currentDisplay);
+
+    if (currentDisplay === "none") {
+        element.style.display = "block";
+        document.getElementById("gray_block").style.display= "block";
+    } else {
+        element.style.display = "none";
+        document.getElementById("gray_block").style.display = "none";
+    }
+    }
+
+    document.getElementById("signup_button").addEventListener("click", toggle_signup);
+
+    function toggle_signup() {
+    var element = document.getElementById("signup_form");
+    var currentDisplay = window.getComputedStyle(element).getPropertyValue("display");
+            console.log("Current display value:", currentDisplay);
+
+    if (currentDisplay === "none") {
+        element.style.display = "block";
+        document.getElementById("signin_form").style.display= "none";
+        document.getElementById("sign_partition").style.display= "none";
+        document.getElementById("signup_button").style.display= "none";
+    } else {
+        element.style.display = "none";
+        document.getElementById("signin_form").style.display = "";
+        document.getElementById("sign_partition").style.display= "";
+        document.getElementById("signup_button").style.display= "";
+    }
+    }
+
 
 </script>
 </html>
