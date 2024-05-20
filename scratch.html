@@ -40,7 +40,7 @@
 
         input{border: none; background: transparent; outline: none; margin-left: 5px;}
 
-        input[type=submit]{border: none; background: #3e3e3e; color: white; padding: 10px; border-radius: 20px; width: 100px; margin: 0px 110px; cursor: pointer;}
+        input[type=submit]{border: none; background: #3e3e3e; color: white; padding: 10px; border-radius: 20px; width: 100px; margin: 0 110px; cursor: pointer;}
 
         #signup_button{display: block; border: none; background: #3e3e3e; color: white; padding: 10px; border-radius: 20px; width: 100px; margin: 15px 150px; cursor: pointer;}
 
@@ -60,6 +60,7 @@
 
         .borrower_info{position: absolute; color: #4f4f4f; width: 200px; text-align: left;  margin: 250px 0 0 30px; line-height: 40px;}
 </style>
+    <title>Key Monitoring</title>
 
 </head>
 <body>
@@ -107,7 +108,7 @@
             <input type="password" id="pin2" pattern="/d*" maxlength="4" inputmode="numeric" name="pin" placeholder="1234" required></label>
         <label for="c_pin">Pin:
             <input type="password" id="c_pin" pattern="/d*" maxlength="4" inputmode="numeric" name="c_pin" placeholder="1234" required ></label>
-        <label for="course">Course & sec:
+        <label for="course">Course&sec:
             <input type="text" id="course" name="course" placeholder="BSCOE-2B" required ></label>
         <input type="submit" value="Sign Up" >
     </form>
@@ -182,9 +183,9 @@
 
 
     function toggle_profile() {
-    var element = document.getElementById("profile_block");
-    var currentDisplay = window.getComputedStyle(element).getPropertyValue("display");
-            console.log("Current display value:", currentDisplay);
+        const element = document.getElementById("profile_block");
+        const currentDisplay = window.getComputedStyle(element).getPropertyValue("display");
+        console.log("Current display value:", currentDisplay);
 
     if (currentDisplay === "none") {
         element.style.display = "block";
@@ -197,9 +198,9 @@
 
 
     function toggle_borrowing() {
-    var element = document.getElementById("borrowing_block");
-    var currentDisplay = window.getComputedStyle(element).getPropertyValue("display");
-            console.log("Current display value:", currentDisplay);
+        const element = document.getElementById("borrowing_block");
+        const currentDisplay = window.getComputedStyle(element).getPropertyValue("display");
+        console.log("Current display value:", currentDisplay);
 
     if (currentDisplay === "none") {
         element.style.display = "block";
@@ -211,9 +212,9 @@
     }
 
     document.getElementById("cancel_sign").addEventListener("click", function(){
-    var element = document.getElementById("signup_form");
-    var currentDisplay = window.getComputedStyle(element).getPropertyValue("display");
-            console.log("Current display value:", currentDisplay);
+        const element = document.getElementById("signup_form");
+        const currentDisplay = window.getComputedStyle(element).getPropertyValue("display");
+        console.log("Current display value:", currentDisplay);
 
         if(currentDisplay === "block"){
         toggle_signup();
@@ -223,9 +224,9 @@
     });
 
     function toggle_sign() {
-    var element = document.getElementById("sign_block");
-    var currentDisplay = window.getComputedStyle(element).getPropertyValue("display");
-            console.log("Current display value:", currentDisplay);
+        const element = document.getElementById("sign_block");
+        const currentDisplay = window.getComputedStyle(element).getPropertyValue("display");
+        console.log("Current display value:", currentDisplay);
 
     if (currentDisplay === "none") {
         element.style.display = "block";
@@ -238,9 +239,9 @@
 
 
     function toggle_signup() {
-    var element = document.getElementById("signup_form");
-    var currentDisplay = window.getComputedStyle(element).getPropertyValue("display");
-            console.log("Current display value:", currentDisplay);
+        const element = document.getElementById("signup_form");
+        const currentDisplay = window.getComputedStyle(element).getPropertyValue("display");
+        console.log("Current display value:", currentDisplay);
 
     if (currentDisplay === "none") {
         element.style.display = "block";
