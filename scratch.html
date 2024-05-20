@@ -36,9 +36,9 @@
 
         #signup_form{display: none;position: relative; top: 15px; padding: 40px; width: 300px; margin-bottom: 15px;}
 
-        label{border: 2px solid #000; border-radius: 50px; padding: 7px; width: 300px; display: block; margin-bottom: 8px;}
+        label{display: flex; border: 2px solid #000; border-radius: 50px; padding: 7px; width: 300px; margin-bottom: 8px;}
 
-        input{border: none; background: transparent; outline: none; margin-left: 5px;}
+        input{border: none; background: transparent; outline: none; margin-left: 5px; flex: 1;}
 
         input[type=submit]{border: none; background: #3e3e3e; color: white; padding: 10px; border-radius: 20px; width: 100px; margin: 0 110px; cursor: pointer;}
 
@@ -108,7 +108,7 @@
             <input type="password" id="pin2" pattern="/d*" maxlength="4" inputmode="numeric" name="pin" placeholder="1234" required></label>
         <label for="c_pin">Pin:
             <input type="password" id="c_pin" pattern="/d*" maxlength="4" inputmode="numeric" name="c_pin" placeholder="1234" required ></label>
-        <label for="course">Course&sec:
+        <label for="course">Course & sec:
             <input type="text" id="course" name="course" placeholder="BSCOE-2B" required ></label>
         <input type="submit" value="Sign Up" >
     </form>
