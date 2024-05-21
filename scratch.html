@@ -20,6 +20,10 @@
 
         .titlebar_div{display: flex; align-items: center; height: 70px; background: radial-gradient(circle at 0% 0%, #38b6ff, #44489a);}
 
+        #logo{height: 25px; margin:5px;}
+
+        .spacer{flex: 1;}
+
         .popup_block{display: none; align-items: center; height: 600px; width: 400px; background: #d9d9d9; position: fixed; z-index: 2; border-radius: 20px; left: calc(50vw - 200px); top: calc(50vh - 265px);}
 
         .cancel{display: block; position: relative; color: #3e3e3e; font-size: 30px; left: 360px; top: 15px; cursor: pointer; width: 20px;}
@@ -59,6 +63,14 @@
         .room_description{position: absolute; color: #4f4f4f; width: 200px; text-align: left;  margin: 170px 0 0 30px;}
 
         .borrower_info{position: absolute; color: #4f4f4f; width: 200px; text-align: left;  margin: 250px 0 0 30px; line-height: 40px;}
+
+        @media (max-width: 768px) {
+            .titlebar_div{height: 30px;}
+            #logo{height: 25px;}
+            .title_name{font-size: 10px;}
+            .nav_icon{font-size: 20px; margin: 4px;}
+        }
+
 </style>
     <title>Key Monitoring</title>
 
@@ -118,9 +130,9 @@
 
 <!-- title bar -->
 <div class="titlebar_div" >
-    <img src="src/PSU-logo.png" style="height: 50px; margin: 15px;">
-    <h2 style="display: block; color: white;">Computer Engineering Faculty Keys</h2>
-    <span style="width: calc(100vw - 700px);"></span>
+    <img id="logo" src="src/PSU-logo.png">
+    <h2 class="title_name" style="display: block; color: white;">Computer Engineering Faculty Keys</h2>
+    <span class="spacer"></span>
     <span id="open_profile" class="material-symbols-outlined nav_icon"  onmouseover="this.style.color='#b4b4b4'" onmouseout="this.style.color='white'">account_circle</span>
     <span id="open_borrowing" class="material-symbols-outlined nav_icon" onmouseover="this.style.color='#b4b4b4'" onmouseout="this.style.color='white'">key</span>
     <span id="sign_out" class="material-symbols-outlined nav_icon" onmouseover="this.style.color='#b4b4b4'" onmouseout="this.style.color='white'">logout</span>
@@ -255,7 +267,6 @@
         document.getElementById("signup_button").style.display= "";
     }
     }
-
 
 </script>
 </html>
