@@ -185,6 +185,7 @@
 </div>
 </body>
 <script>
+document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("open_profile").addEventListener("click", toggle_profile);
     document.getElementById("cancel_profile").addEventListener("click", toggle_profile);
     document.getElementById("open_borrowing").addEventListener("click", toggle_borrowing);
@@ -193,19 +194,18 @@
     document.getElementById("sign_out").addEventListener("click", toggle_sign);
 
 
-
     function toggle_profile() {
         const element = document.getElementById("profile_block");
         const currentDisplay = window.getComputedStyle(element).getPropertyValue("display");
         console.log("Current display value:", currentDisplay);
 
-    if (currentDisplay === "none") {
-        element.style.display = "block";
-        document.getElementById("gray_block").style.display= "block";
-    } else {
-        element.style.display = "none";
-        document.getElementById("gray_block").style.display = "none";
-    }
+        if (currentDisplay === "none") {
+            element.style.display = "block";
+            document.getElementById("gray_block").style.display = "block";
+        } else {
+            element.style.display = "none";
+            document.getElementById("gray_block").style.display = "none";
+        }
     }
 
 
@@ -214,24 +214,24 @@
         const currentDisplay = window.getComputedStyle(element).getPropertyValue("display");
         console.log("Current display value:", currentDisplay);
 
-    if (currentDisplay === "none") {
-        element.style.display = "block";
-        document.getElementById("gray_block").style.display= "block";
-    } else {
-        element.style.display = "none";
-        document.getElementById("gray_block").style.display = "none";
-    }
+        if (currentDisplay === "none") {
+            element.style.display = "block";
+            document.getElementById("gray_block").style.display = "block";
+        } else {
+            element.style.display = "none";
+            document.getElementById("gray_block").style.display = "none";
+        }
     }
 
-    document.getElementById("cancel_sign").addEventListener("click", function(){
+    document.getElementById("cancel_sign").addEventListener("click", function () {
         const element = document.getElementById("signup_form");
         const currentDisplay = window.getComputedStyle(element).getPropertyValue("display");
         console.log("Current display value:", currentDisplay);
 
-        if(currentDisplay === "block"){
-        toggle_signup();
-        }else{
-        toggle_sign();
+        if (currentDisplay === "block") {
+            toggle_signup();
+        } else {
+            toggle_sign();
         }
     });
 
@@ -240,13 +240,13 @@
         const currentDisplay = window.getComputedStyle(element).getPropertyValue("display");
         console.log("Current display value:", currentDisplay);
 
-    if (currentDisplay === "none") {
-        element.style.display = "block";
-        document.getElementById("gray_block").style.display= "block";
-    } else {
-        element.style.display = "none";
-        document.getElementById("gray_block").style.display = "none";
-    }
+        if (currentDisplay === "none") {
+            element.style.display = "block";
+            document.getElementById("gray_block").style.display = "block";
+        } else {
+            element.style.display = "none";
+            document.getElementById("gray_block").style.display = "none";
+        }
     }
 
 
@@ -255,18 +255,19 @@
         const currentDisplay = window.getComputedStyle(element).getPropertyValue("display");
         console.log("Current display value:", currentDisplay);
 
-    if (currentDisplay === "none") {
-        element.style.display = "block";
-        document.getElementById("signin_form").style.display= "none";
-        document.getElementById("sign_partition").style.display= "none";
-        document.getElementById("signup_button").style.display= "none";
-    } else {
-        element.style.display = "none";
-        document.getElementById("signin_form").style.display = "";
-        document.getElementById("sign_partition").style.display= "";
-        document.getElementById("signup_button").style.display= "";
+        if (currentDisplay === "none") {
+            element.style.display = "block";
+            document.getElementById("signin_form").style.display = "none";
+            document.getElementById("sign_partition").style.display = "none";
+            document.getElementById("signup_button").style.display = "none";
+        } else {
+            element.style.display = "none";
+            document.getElementById("signin_form").style.display = "";
+            document.getElementById("sign_partition").style.display = "";
+            document.getElementById("signup_button").style.display = "";
+        }
     }
-    }
+});
 
 </script>
 </html>
