@@ -1,0 +1,139 @@
+/* General styles for the body */
+body {
+    font-family: Arial, sans-serif; /* Set font family for text */
+    background-color: #f0f0f0; /* Set background color */
+    color: #ffffff; /* Set text color */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items vertically */
+    min-height: 100vh; /* Set minimum height to 100% of viewport height */
+    position: relative; /* Set relative positioning */
+}
+
+/* Header styling */
+header {
+    background: radial-gradient(circle at 0% 0%, #38b6ff, #44489a);
+    color: #ffffff; /* Text color */
+    font-size: 80%;
+    width: 100vw; /* Set width to 100% */
+    height: 4vw;
+    top: 0;
+    position: fixed;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; /* "semibold" is equivalent to font-weight: 600 */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    padding: 0 10px; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Align header elements */
+header h1 {
+    margin: 0; /* Remove margin */
+    flex: 1; /* Allow h1 to take up remaining space */
+    text-align: left; /* Align text to the left */
+}
+
+/* Style the navigation container */
+nav {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+/* Style for navigation buttons */
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+.user-icon,.user-list-icon, .signup-list-btn{
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px black;
+    color: #ffff 
+}
+
+
+.user-list-container {
+    background: transparent; /* Transparent border */
+    padding: 2%; /* Add padding */
+    border: 20px radial-gradient(circle at 0% 0%, #38b6ff, #44489a); /* Radial gradient background */
+    border-radius: 10px; /* Optional: Add border radius for rounded corners */
+    box-shadow: inset 0 0 0 6px #1261d6;
+    margin: 20px auto 0; /* Add margin to the top */
+    width: 95%; /* Set width to 95% of the body */
+    height: 95%; /* Set height to 95% of the body */
+    max-width: 95vw; /* Set maximum width to 95% of the viewport width */
+    max-height: 95vh; /* Set maximum height to 95% of the viewport height */
+    color: #000; /* Set text color */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items vertically */
+    overflow: auto; /* Enable scrolling if content overflows */
+    position: relative; /* Set relative positioning */
+    top: 60px; /* Move the container up further */
+}
+.signup-list-container {
+    background: transparent; /* Transparent border */
+    padding: 2%; /* Add padding */
+    border: 20px radial-gradient(circle at 0% 0%, #38b6ff, #44489a); /* Radial gradient background */
+    border-radius: 10px; /* Optional: Add border radius for rounded corners */
+    box-shadow: inset 0 0 0 6px #1261d6;
+    margin: 20px auto 0; /* Add margin to the top */
+    width: 95%; /* Set width to 95% of the body */
+    height: 95%; /* Set height to 95% of the body */
+    max-width: 95vw; /* Set maximum width to 95% of the viewport width */
+    max-height: 95vh; /* Set maximum height to 95% of the viewport height */
+    color: #000; /* Set text color */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items vertically */
+    overflow: auto; /* Enable scrolling if content overflows */
+    position: relative; /* Set relative positioning */
+    top: 60px; /* Move the container up further */
+}
+
+
+
+/* Add these styles to make sure the table takes up 100% of the container */
+.user-list-table {
+    width: 100%; /* Take up 100% of the container's width */
+    height: 100%; /* Take up 100% of the container's height */
+    border-collapse: collapse; /* Collapse borders between cells */
+}
+
+/* Update the styles for table cells */
+.user-list-table th,
+.user-list-table td {
+    border: 1px solid #ccc; /* Add border */
+    border-left: none; /* Remove vertical border */
+    border-right: none; /* Remove vertical border */
+    padding: 15px; /* Increase padding to make cells larger */
+    text-align: center; /* Center-align text */
+    width: calc(100% / 6); /* Set width to 1/6 of the body's width */
+}
+.signup-list-table {
+    width: 100%; /* Take up 100% of the container's width */
+    height: 100%; /* Take up 100% of the container's height */
+    border-collapse: collapse; /* Collapse borders between cells */
+}
+
+/* Update the styles for table cells */
+.signup-list-table th,
+.signup-list-table td {
+    border: 1px solid #ccc; /* Add border */
+    border-left: none; /* Remove vertical border */
+    border-right: none; /* Remove vertical border */
+    padding: 15px; /* Increase padding to make cells larger */
+    text-align: center; /* Center-align text */
+    width: calc(100% / 6); /* Set width to 1/6 of the body's width */
+}
+.logout-icon {
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    cursor: pointer; /* Add cursor pointer */
+    font-size: 24px; /* Adjust size as needed */
+    text-shadow: 2px 2px 4px black; 
+    color: #ffff;
+}

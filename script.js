@@ -1,101 +1,56 @@
-var keyCount = 1;
+// Function to show or hide the user list
+document.getElementById('user-list-icon').addEventListener('click', function() {
+    var userListContainer = document.getElementById('userListContainer');
+    if (userListContainer.style.display === 'none' || userListContainer.style.display === '') {
+        userListContainer.style.display = 'block';
+    } else {
+        userListContainer.style.display = 'none';
+    }
+});
 
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
+document.getElementById('signup-list-icon').addEventListener('click', function() {
+    var signupListContainer = document.getElementById('signupListContainer');
+    if (signupListContainer.style.display === 'none' || signupListContainer.style.display === '') {
+        signupListContainer.style.display = 'block';
+    } else {
+        signupListContainer.style.display = 'none';
+    }
+});
+// Function to show the sign-up list
+function showSignUpList() {
+    // Get the sign-up list container element
+    var signUpListContainer = document.getElementById("signUpListContainer");
+
+    // Show the sign-up list container
+    signUpListContainer.style.display = "block";
+
+    // Clear any existing content inside the sign-up list container
+    signUpListContainer.innerHTML = "";
+
+    // Create a div for the sign-up list content
+    var signUpListContent = document.createElement("div");
+    signUpListContent.classList.add("signup-list-content");
+
+    // Create rows and columns for the sign-up list content
+    for (var i = 0; i < 7; i++) { // Adjusted to 7 rows
+        var row = document.createElement("div"); // Create a new div for each row
+        row.classList.add("signup-list-row");
+
+        for (var j = 0; j < 6; j++) {
+            var cell = document.createElement("div"); // Create a new div for each cell
+            cell.classList.add("signup-list-cell");
+            cell.textContent = ""; // Set the cell content to empty
+            row.appendChild(cell); // Append the cell to the row
+        }
+
+        signUpListContent.appendChild(row); // Append the row to the sign-up list content
+    }
+
+    // Append the sign-up list content to the sign-up list container
+    signUpListContainer.appendChild(signUpListContent);
 }
 
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
-
-document.getElementById("nav-button").onclick = function() {
-    openNav();
-};
-
-function showAddKeyModal() {
-    closeNav();
-    document.getElementById("addKeyModal").style.display = "block";
-}
-
-function closeModal() {
-    document.getElementById("addKeyModal").style.display = "none";
-}
-
-document.getElementById("KeyHolder").oninput = function() {
-    // If there's any input in Key Holder, disable the Available checkbox
-    var keyHolderValue = this.value.trim();
-    var availableCheckbox = document.getElementById("available");
-    if (keyHolderValue) {
-        availableCheckbox.checked = false;
-        availableCheckbox.disabled = true;
-    } else {
-        availableCheckbox.disabled = false;
-    }
-};
-
-document.getElementById("available").onchange = function() {
-    // If Available is checked, disable and clear the Key Holder input
-    var keyHolderInput = document.getElementById("KeyHolder");
-    if (this.checked) {
-        keyHolderInput.value = "";
-        keyHolderInput.disabled = true;
-    } else {
-        keyHolderInput.disabled = false;
-    }
-};
-
-document.getElementById("submitKey").onclick = function() {
-    var keyName = document.getElementById("keyName").value.trim();
-    var KeyHolder = document.getElementById("KeyHolder").value.trim() || "Keypie"; // Use "Keypie" if KeyHolder is empty
-    var available = document.getElementById("available").checked;
-
-    // Validation checks
-    if (!keyName) {
-        document.getElementById("keyNameError").style.display = "block";
-        return;
-    } else {
-        document.getElementById("keyNameError").style.display = "none";
-    }
-
-    if (!available && !KeyHolder) {
-        document.getElementById("KeyHolderError").style.display = "block";
-        return;
-    } else {
-        document.getElementById("KeyHolderError").style.display = "none";
-    }
-
-    // Determine which container to append the key to
-    var containerId = available ? "availableKeysContainer" : "notAvailableKeysContainer";
-    var container = document.getElementById(containerId);
-
-    var div = document.createElement("div");
-    div.className = "key-item";
-    if (!available) {
-        div.classList.add("not-available");
-    }
-
-    var keyInfo = document.createElement("h4");
-    keyInfo.innerText = `Key: ${keyName}`;
-    div.appendChild(keyInfo);
-
-    var holderInfo = document.createElement("p");
-    holderInfo.innerText = `Key Holder: ${KeyHolder}`;
-    div.appendChild(holderInfo);
-
-    var availabilityInfo = document.createElement("p");
-    availabilityInfo.innerText = `Status: ${available ? "Available" : "Not Available"}`;
-    div.appendChild(availabilityInfo);
-
-    container.appendChild(div);
-
-    // Resetting the form fields after submission
-    document.getElementById("keyName").value = "";
-    document.getElementById("KeyHolder").value = "";
-    document.getElementById("KeyHolder").disabled = false;
-    document.getElementById("available").checked = false;
-    document.getElementById("available").disabled = false;
-
-    // Close the modal after submission
-    document.getElementById("addKeyModal").style.display = "none";
-};
-
+// JavaScript to handle the display of the sign-up list
+document.getElementById("signuplistbtn").addEventListener("click", function() {
+    showSignUpList(); // Call the showSignUpList function
+});
